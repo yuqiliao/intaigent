@@ -1,0 +1,46 @@
+---
+import Container from "./Container.astro"
+
+const teamMembers = [
+  {
+    name: 'Sifan Liu',
+    profilePicture: './images/avatars/avatar-1.webp',
+    company: 'Amazon Web Services',
+    email:`sifan@intaigent.com`
+  },
+  {
+    name: 'Aline Weng',
+    profilePicture: './images/avatars/avatar-2.webp',
+    company: 'World Bank Group',
+    email:`aline@intaigent.com`
+  },
+];
+
+---
+
+<div id="team">
+  <Container>
+    <div class="mb-20 space-y-4 px-6 md:px-0">
+      <h2 class="text-center text-2xl font-bold text-gray-800 dark:text-white md:text-4xl">
+        Meet Our Team
+      </h2>
+    </div>
+
+    <div class="flex justify-around">
+      {teamMembers.map(member => (
+        <div class="text-center">
+          <img
+            src={member.profilePicture}
+            alt={`Profile of ${member.name}`}
+            class="rounded-full w-25 h-25 object-cover mx-auto mb-4"
+          />
+          <p class="text-lg font-bold mb-2">{member.name}</p>
+          <p class="text-lg mb-2 text-gray-400 dark:text-white">{member.company}</p>
+          <p class="text-lg mb-2 text-gray-800 dark:text-white">{member.email}</p>
+        </div>
+      ))}
+    </div>
+
+
+  </Container>
+</div>
