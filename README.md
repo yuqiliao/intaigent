@@ -1,9 +1,6 @@
-# astrolus
+# intaigent website 
+This website is built using astro and tailwindcss and based from the [this theme](https://github.com/Tailus-UI/astro-theme) 
 
-A page template built with astro and tailwindcss using tailus blocks.
-
-![Tailus astro based theme](./public/astrolus-light.png)
-![Tailus astro based dark theme](./public/astrolus-dark.png)
 
 ## 🚀 Project Structure
 
@@ -12,7 +9,7 @@ Inside of your Astro project, you'll see the following folders and files:
 ```
 /
 ├── public/
-│   └── favicon.svg
+│   └── favicon.png
 ├── src/
 │   ├── components/
 │   │   └── Card.astro
@@ -42,6 +39,3 @@ All commands are run from the root of the project, from a terminal:
 | `npm run astro ...`    | Run CLI commands like `astro add`, `astro preview` |
 | `npm run astro --help` | Get help using the Astro CLI                       |
 
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).

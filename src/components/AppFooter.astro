@@ -4,14 +4,20 @@ import Container from "./Container.astro";
 ---
 
 <footer class="py-20 md:py-10">
+  <div class="relative">
+    <div aria-hidden="true" class="absolute inset-0 h-max w-full grid grid-cols-2 -space-x-52 opacity-40 dark:opacity-20">
+      <div class="blur-[106px] h-20 bg-gradient-to-br from-primary to-purple-400 dark:from-blue-700"></div>
+      <div class="blur-[106px] h-0 bg-gradient-to-r from-cyan-400 to-sky-300 dark:to-indigo-600"></div>
+    </div>
   <Container class="text-gray-800 dark:text-white md:text-3xl p-4 flex justify-between items-center">
     <div>
       <p>Office address: 668 Shangda Road, 1-5-A Baoshan District, Shanghai China</p>
     </div>
 
     <div>
-      <p>&copy; 2024 intagient. All Rights Reserved.</p>
+      <p>&copy; 2024 intaigent. All Rights Reserved.</p>
     </div>
   </Container>
+</div>
 </footer>
 
