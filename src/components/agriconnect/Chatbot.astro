@@ -1,0 +1,27 @@
+<section class="bg-gradient-to-br from-blue-50 to-green-50 py-20">
+  <div class="container mx-auto px-4">
+    <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">AI-Powered Chatbot</h2>
+    <div class="flex flex-col md:flex-row items-center justify-between gap-12">
+      <div class="w-full md:w-1/2">
+        <img src="/images/agriconnect/chatbot-wireframe.svg" alt="Chatbot Wireframe" class="w-full h-auto max-w-sm mx-auto">
+      </div>
+      <div class="w-full md:w-1/2 space-y-8">
+        <h3 class="text-2xl font-semibold mb-6 text-gray-700">Key Features</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          {[
+            { icon: "🌍", title: "Multi-lingual", description: "Support in various languages" },
+            { icon: "🎙️", title: "Multi-modal", description: "Text, voice, and image interactions" },
+            { icon: "💬", title: "Integrated", description: "Works with WhatsApp and Telegram" },
+            { icon: "🕰️", title: "Always Available", description: "24/7 support for farmers" },
+          ].map((feature) => (
+            <div class="bg-white p-6 rounded-lg shadow-md transition-all hover:shadow-lg">
+              <div class="text-3xl mb-2">{feature.icon}</div>
+              <h4 class="text-lg font-semibold mb-2 text-gray-800">{feature.title}</h4>
+              <p class="text-gray-600">{feature.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

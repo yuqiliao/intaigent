@@ -11,8 +11,9 @@
   },
   "dependencies": {
     "astro": "^1.9.2",
-    "sass": "^1.70.0",
-    "esbuild": "^0.17.19"
+    "astro-icon": "^1.1.1",
+    "esbuild": "^0.17.19",
+    "sass": "^1.70.0"
   },
   "devDependencies": {
     "@astrojs/tailwind": "^1.0.0"
