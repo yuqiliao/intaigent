@@ -1,18 +1,56 @@
-<section class="bg-gradient-to-r from-green-50 to-blue-50">
-  <div class="container mx-auto px-4 py-20">
-    <div class="flex flex-col md:flex-row items-center gap-12">
-      <div class="md:w-1/2">
-        <h1 class="text-5xl font-bold mb-6 text-green-800">AgriConnect</h1>
-        <p class="text-xl mb-8 text-gray-700">Empowering farmers with AI-driven insights and support for sustainable agriculture</p>
-       
+<section class="bg-gradient-to-br from-green-50 via-blue-50 to-green-100 min-h-[75vh] flex items-center overflow-hidden relative">
+  <div class="container mx-auto px-4 py-16 z-10">
+    <div class="flex flex-col md:flex-row items-center md:gap-8">
+      <div class="md:w-1/2 space-y-6">
+        <h1 class="text-6xl font-bold text-green-800 leading-tight">
+          Agri<span class="text-blue-600">Connect</span>
+        </h1>
+        <p class="text-xl text-gray-700 max-w-md">
+          Empowering farmers with AI-driven insights and support for sustainable agriculture
+        </p>
+        <a href="#chatbot" class="inline-block bg-green-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-green-700 transition-colors">
+          Learn More
+        </a>
       </div>
-      <div class="md:w-1/2">
-        <img 
-          src="/images/agriculture-tech.jpg" 
-          alt="Farmer using AgriConnect technology" 
-          class="rounded-lg shadow-xl"
-        />
+      <div class="md:w-1/2 flex justify-center relative">
+        <div class="absolute inset-0 bg-gradient-to-r from-green-200 to-blue-200 rounded-full filter blur-3xl opacity-30"></div>
+        <div class="relative z-10 w-full max-w-md grid grid-cols-2 gap-8 p-4">
+          <img src="/images/agriconnect/chatbotArtboard 1.svg" alt="Chatbot" class="w-full h-auto icon-animate icon-1">
+          <img src="/images/agriconnect/dashboardArtboard 1.svg" alt="Dashboard" class="w-full h-auto icon-animate icon-2">
+          <img src="/images/agriconnect/cmsArtboard 1.svg" alt="CMS" class="w-full h-auto icon-animate icon-3">
+          <img src="/images/agriconnect/marketArtboard 1.svg" alt="Market" class="w-full h-auto icon-animate icon-4">
+        </div>
       </div>
     </div>
   </div>
+  <div class="absolute -bottom-16 -left-16 w-64 h-64 bg-green-100 rounded-full filter blur-3xl opacity-30"></div>
+  <div class="absolute -top-16 -right-16 w-64 h-64 bg-blue-100 rounded-full filter blur-3xl opacity-30"></div>
 </section>
+
+<style>
+  @keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0); }
+    25% { transform: translateY(-10px) rotate(-5deg); }
+    75% { transform: translateY(10px) rotate(5deg); }
+  }
+  
+  .icon-animate {
+    animation: float 4s ease-in-out infinite;
+    filter: opacity(0.7) drop-shadow(0 0 0.75rem rgba(0, 128, 0, 0.2));
+  }
+  
+  .icon-1 { animation-delay: 0s; }
+  .icon-2 { animation-delay: 1s; }
+  .icon-3 { animation-delay: 2s; }
+  .icon-4 { animation-delay: 3s; }
+</style>
+
+<script>
+  document.querySelector('a[href="#chatbot"]').addEventListener('click', function(e) {
+    e.preventDefault();
+    const chatbotSection = document.querySelector('#chatbot');
+    if (chatbotSection) {
+      chatbotSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+</script>
