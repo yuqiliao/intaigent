@@ -1,56 +1,43 @@
-<section class="bg-gradient-to-br from-green-50 via-blue-50 to-green-100 min-h-[75vh] flex items-center overflow-hidden relative">
-  <div class="container mx-auto px-4 py-16 z-10">
-    <div class="flex flex-col md:flex-row items-center md:gap-8">
-      <div class="md:w-1/2 space-y-6">
+<section class="min-h-[80vh] flex items-center overflow-hidden relative">
+  <div aria-hidden="true" class="absolute inset-0 grid grid-cols-2 -space-x-52 opacity-40">
+    <div class="blur-[106px] h-56 bg-gradient-to-br from-green-400 to-blue-400"></div>
+    <div class="blur-[106px] h-32 bg-gradient-to-r from-blue-300 to-white-300"></div>
+  </div>
+  <div class="container mx-auto px-4 py-12 z-10">
+    <div class="flex flex-col md:flex-row items-center justify-between">
+      <div class="md:w-[45%] space-y-8">
         <h1 class="text-6xl font-bold text-gray-900 leading-tight">
-          Agri<span class="text-blue-600">Connect</span>
+          Agri<span class="text-blue-600 animate-pulse">Connect</span>
         </h1>
-        <p class="text-xl text-gray-700 max-w-md">
-          Empowering farmers with AI-driven insights and support for sustainable agriculture
+        <p class="text-2xl text-gray-700 max-w-md">
+          Empowering farmers with <span class="text-green-600 font-semibold">AI-driven insights</span> and support for sustainable agriculture
         </p>
-        <a href="#chatbot" class="inline-block bg-green-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-green-700 transition-colors">
-          Learn More
+        <a href="#chatbot" class="inline-block bg-green-600 text-white px-10 py-4 rounded-full font-semibold hover:bg-green-700 transition-all duration-300 text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+          Get Started
         </a>
       </div>
-      <div class="md:w-1/2 flex justify-center relative">
-        <div class="absolute inset-0 bg-gradient-to-r from-green-200 to-blue-200 rounded-full filter blur-3xl opacity-30"></div>
-        <div class="relative z-10 w-full max-w-md grid grid-cols-2 gap-8 p-4">
-          <img src="/images/agriconnect/chatbotArtboard 1.svg" alt="Chatbot" class="w-full h-auto icon-animate icon-1">
-          <img src="/images/agriconnect/dashboardArtboard 1.svg" alt="Dashboard" class="w-full h-auto icon-animate icon-2">
-          <img src="/images/agriconnect/cmsArtboard 1.svg" alt="CMS" class="w-full h-auto icon-animate icon-3">
-          <img src="/images/agriconnect/marketArtboard 1.svg" alt="Market" class="w-full h-auto icon-animate icon-4">
+      <div class="md:w-[55%] flex justify-center relative mt-8 md:mt-0">
+        <div class="absolute inset-0 bg-gradient-to-r from-green-200 to-blue-200 rounded-full filter blur-3xl opacity-40 animate-pulse"></div>
+        <div class="relative z-10 w-full h-full">
+          <img src="/images/agriconnect/flowchart-small.drawio.svg" alt="AgriConnect Flowchart" class="w-full h-full object-contain animate-float" />
         </div>
       </div>
     </div>
   </div>
-  <div class="absolute -bottom-16 -left-16 w-64 h-64 bg-green-100 rounded-full filter blur-3xl opacity-30"></div>
-  <div class="absolute -top-16 -right-16 w-64 h-64 bg-blue-100 rounded-full filter blur-3xl opacity-30"></div>
 </section>
 
 <style>
   @keyframes float {
-    0%, 100% { transform: translateY(0) rotate(0); }
-    25% { transform: translateY(-10px) rotate(-5deg); }
-    75% { transform: translateY(10px) rotate(5deg); }
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
   }
-  
-  .icon-animate {
-    animation: float 4s ease-in-out infinite;
-    filter: opacity(0.7) drop-shadow(0 0 0.75rem rgba(0, 128, 0, 0.2));
+  @keyframes blob {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    25% { transform: translate(20px, -20px) scale(1.1); }
+    50% { transform: translate(0, -40px) scale(1); }
+    75% { transform: translate(-20px, -20px) scale(0.9); }
   }
-  
-  .icon-1 { animation-delay: 0s; }
-  .icon-2 { animation-delay: 1s; }
-  .icon-3 { animation-delay: 2s; }
-  .icon-4 { animation-delay: 3s; }
+  .animate-float { animation: float 6s ease-in-out infinite; }
+  .animate-blob { animation: blob 7s infinite; }
+  .animation-delay-2000 { animation-delay: 2s; }
 </style>
-
-<script>
-  document.querySelector('a[href="#chatbot"]').addEventListener('click', function(e) {
-    e.preventDefault();
-    const chatbotSection = document.querySelector('#chatbot');
-    if (chatbotSection) {
-      chatbotSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  });
-</script>
