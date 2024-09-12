@@ -1,6 +1,13 @@
 ---
 import AppFooter from "../components/AppFooter.astro";
 import AppHeader from "../components/AppHeader.astro";
+
+interface Props {
+  title: string;
+  isMainPage?: boolean;
+}
+
+const { title, isMainPage = false } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -16,7 +23,7 @@ import AppHeader from "../components/AppHeader.astro";
         <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700&display=swap" rel="stylesheet" />
     </head>
     <body class="bg-white dark:bg-gray-900">
-        <AppHeader />
+        <AppHeader isMainPage={isMainPage} />
         <slot />
         <AppFooter />
     </body>

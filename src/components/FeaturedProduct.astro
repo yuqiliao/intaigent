@@ -1,0 +1,59 @@
+---
+import Container from "./Container.astro"
+import chatbotIcon from '../../public/images/agriconnect/chatbotArtboard 1.svg';
+import dashboardIcon from '../../public/images/agriconnect/dashboardArtboard 1.svg';
+import cmsIcon from '../../public/images/agriconnect/cmsArtboard 1.svg';
+import marketIcon from '../../public/images/agriconnect/marketArtboard 1.svg';
+---
+
+<section id="product" >
+  <div class="relative">
+    <!-- Gradient background -->
+    <div aria-hidden="true" class="absolute inset-0 h-max w-full grid grid-cols-2 -space-x-52 opacity-40 dark:opacity-20">
+      <div class="blur-[106px] h-56 bg-gradient-to-br from-primary to-purple-400 dark:from-blue-700"></div>
+      <div class="blur-[106px] h-32 bg-gradient-to-r from-cyan-400 to-sky-300 dark:to-indigo-600"></div>
+    </div>
+  <div class="relative max-w-screen-xl mx-auto px-4 py-28 gap-12 text-gray-600 md:px-8 xl:flex">
+
+   
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center">
+      <h2 class="my-8 text-2xl font-bold text-gray-700 dark:text-white md:text-4xl">Featured Product - Agriconnect</h2>
+    </div>
+    
+    <div class="mb-16">
+      <p class="text-lg text-gray-600 mb-8 max-w-3xl mx-auto text-center">
+        <b>Agriconnect</b> is designed to revolutionize farming by connecting farmers with real-time data and insights, empowering them to make informed decisions and optimize their operations.
+      </p>
+      <div class="text-center">
+        <a href="/agriconnect" class="inline-block bg-primary text-white font-semibold py-3 px-6 rounded-lg hover:bg-primary-dark transition-colors">
+          Learn More
+        </a>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div class="text-center">
+        <img src={chatbotIcon} alt="Chatbot" class="w-16 h-16 mx-auto mb-4" />
+        <h4 class="text-lg font-semibold mb-2">AI-Powered Chatbot</h4>
+        <p class="text-gray-600">Get instant answers to your farming questions</p>
+      </div>
+      <div class="text-center">
+        <img src={dashboardIcon} alt="Dashboard" class="w-16 h-16 mx-auto mb-4" />
+        <h4 class="text-lg font-semibold mb-2">Smart Dashboard</h4>
+        <p class="text-gray-600">Monitor your farm's performance in real-time</p>
+      </div>
+      <div class="text-center">
+        <img src={cmsIcon} alt="CMS" class="w-16 h-16 mx-auto mb-4" />
+        <h4 class="text-lg font-semibold mb-2">Content Management</h4>
+        <p class="text-gray-600">Access and manage your agricultural content</p>
+      </div>
+      <div class="text-center">
+        <img src={marketIcon} alt="Market" class="w-16 h-16 mx-auto mb-4" />
+        <h4 class="text-lg font-semibold mb-2">Market Insights</h4>
+        <p class="text-gray-600">Stay updated with the latest market trends</p>
+      </div>
+    </div>
+  </div>
+</div>
+</section>

@@ -1,5 +1,12 @@
 ---
 import Container from "./Container.astro";
+
+interface Props {
+  isMainPage: boolean;
+}
+
+const { isMainPage } = Astro.props;
+
 const links = [
     {
         to: "/#features",
@@ -10,13 +17,100 @@ const links = [
         label: "Services",
     },
     {
+        to: "/#product",
+        label: "Product",
+    },
+    {
         to: "/#highlight",
         label: "Award",
     },
 ];
 ---
 
-<script>
+<header>
+  <nav class="absolute z-50 w-full border-b border-black/5 dark:border-white/5 lg:border-transparent">
+    <Container>
+      <div class="relative flex flex-wrap items-center justify-between gap-6 py-3 md:gap-0 md:py-4">
+        <div class="relative z-20 flex w-full justify-between items-center md:px-0 lg:w-max">
+          <a href={isMainPage ? "/#home" : "/"} aria-label="logo" class="flex items-center space-x-2">
+            <div aria-hidden="true" class="flex space-x-1">
+              <svg width="25" height="25" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25">
+                <path stroke="#000" stroke-width="0.08333333333333333" id="svg_1" d="m0.967 24.153 7.083 -23.417 7.083 23.417h-14.167z" fill="#000000"/>
+                <path stroke="null" stroke-width="0.08333333333333333" id="svg_3" height="284" width="84" y="7.5" x="203" fill="#31aae2" d="M16.917 0.625H23.917V24.292H16.917V0.625z"/>
+              </svg>
+            </div>
+            <span class="text-2xl font-bold text-gray-900 dark:text-white">intaigent</span>
+          </a>
+
+          {isMainPage ? (
+            <div class="relative flex max-h-10 items-center lg:hidden">
+              <button aria-label="humburger" id="hamburger" class="relative -mr-6 p-6">
+                <div aria-hidden="true" id="line" class="m-auto h-0.5 w-5 rounded bg-sky-900 transition duration-300 dark:bg-gray-300"></div>
+                <div aria-hidden="true" id="line2" class="m-auto mt-2 h-0.5 w-5 rounded bg-sky-900 transition duration-300 dark:bg-gray-300"></div>
+              </button>
+            </div>
+          ) : (
+            <a href="/" class="text-blue-600 dark:text-blue-400 hover:underline ml-4 flex items-center">
+              &larr; <span class="ml-1">Back to Main Page</span>
+            </a>
+          )}
+        </div>
+
+        {isMainPage && (
+          <>
+            <div id="navLayer" aria-hidden="true" class="fixed inset-0 z-10 h-screen w-screen origin-bottom scale-y-0 bg-white/70 backdrop-blur-2xl transition duration-500 dark:bg-gray-900/70 lg:hidden"></div>
+            <div id="navlinks" class="invisible absolute top-full left-0 z-20 w-full origin-top-right translate-y-1 scale-90 flex-col flex-wrap justify-end gap-6 rounded-3xl border border-gray-100 bg-white p-8 opacity-0 shadow-2xl shadow-gray-600/10 transition-all duration-300 dark:border-gray-700 dark:bg-gray-800 dark:shadow-none lg:visible lg:relative lg:flex lg:w-7/12 lg:translate-y-0 lg:scale-100 lg:flex-row lg:items-center lg:gap-0 lg:border-none lg:bg-transparent lg:p-0 lg:opacity-100 lg:shadow-none">
+              <div class="w-full text-gray-600 dark:text-gray-200 lg:w-auto lg:pr-4 lg:pt-0">
+                <ul class="flex flex-col gap-6 tracking-wide lg:flex-row lg:gap-0 lg:text-sm">
+                  {
+                    links.map((link) => (
+                      <li>
+                        <a href={link.to} class="hover:text-primary block transition dark:hover:text-white md:px-4">
+                          <span>{link.label}</span>
+                        </a>
+                      </li>
+                    ))
+                  }
+                </ul>
+              </div>
+
+              <div class="mt-12 lg:mt-0">
+                <a
+                  href="#contact"
+                  class="relative flex h-9 w-full items-center justify-center px-4 before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max"
+                >
+                  <span class="relative text-sm font-semibold text-white">
+                    Contact
+                  </span>
+                </a>
+              </div>
+            </div>
+          </>
+        )}
+      </div>
+    </Container>
+  </nav>
+</header>
+
+<style>
+  #toggle_nav:checked ~ div #hamburger #line {
+    @apply translate-y-1.5 rotate-45;
+  }
+
+  #toggle_nav:checked ~ div #hamburger #line2 {
+    @apply -translate-y-1 -rotate-45;
+  }
+
+  .toggled div:first-child {
+    @apply translate-y-1.5 rotate-45;
+  }
+  .toggled div:last-child {
+    @apply -translate-y-1 -rotate-45;
+  }
+</style>
+
+{isMainPage && (
+  <script>
     let isToggled = false;
     const navlinks = document.querySelector("#navlinks");
     const hamburger = document.querySelector("#hamburger");
@@ -45,71 +139,5 @@ const links = [
             toggleNavlinks();
         });
     });
-</script>
-
-<header>
-    <nav class="absolute z-10 w-full border-b border-black/5 dark:border-white/5 lg:border-transparent">
-        <Container>
-            <div class="relative flex flex-wrap items-center justify-between gap-6 py-3 md:gap-0 md:py-4">
-                <div class="relative z-20 flex w-full justify-between md:px-0 lg:w-max">
-                    <a href="/#home" aria-label="logo" class="flex items-center space-x-2">
-                        <div aria-hidden="true" class="flex space-x-1">
-                            <svg width="25" height="25" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25">
-                                <path stroke="#000" stroke-width="0.08333333333333333" id="svg_1" d="m0.967 24.153 7.083 -23.417 7.083 23.417h-14.167z" fill="#000000"/>
-                                <path stroke="null" stroke-width="0.08333333333333333" id="svg_3" height="284" width="84" y="7.5" x="203" fill="#31aae2" d="M16.917 0.625H23.917V24.292H16.917V0.625z"/>
-                              </svg>
-                        </div>
-                        <span class="text-2xl font-bold text-gray-900 dark:text-white">intaigent</span>
-                    </a>
-
-                    <div class="relative flex max-h-10 items-center lg:hidden">
-                        <button aria-label="humburger" id="hamburger" class="relative -mr-6 p-6">
-                            <div aria-hidden="true" id="line" class="m-auto h-0.5 w-5 rounded bg-sky-900 transition duration-300 dark:bg-gray-300"></div>
-                            <div aria-hidden="true" id="line2" class="m-auto mt-2 h-0.5 w-5 rounded bg-sky-900 transition duration-300 dark:bg-gray-300"></div>
-                        </button>
-                    </div>
-                </div>
-                <div id="navLayer" aria-hidden="true" class="fixed inset-0 z-10 h-screen w-screen origin-bottom scale-y-0 bg-white/70 backdrop-blur-2xl transition duration-500 dark:bg-gray-900/70 lg:hidden"></div>
-                <div id="navlinks" class="invisible absolute top-full left-0 z-20 w-full origin-top-right translate-y-1 scale-90 flex-col flex-wrap justify-end gap-6 rounded-3xl border border-gray-100 bg-white p-8 opacity-0 shadow-2xl shadow-gray-600/10 transition-all duration-300 dark:border-gray-700 dark:bg-gray-800 dark:shadow-none lg:visible lg:relative lg:flex lg:w-7/12 lg:translate-y-0 lg:scale-100 lg:flex-row lg:items-center lg:gap-0 lg:border-none lg:bg-transparent lg:p-0 lg:opacity-100 lg:shadow-none">
-                    <div class="w-full text-gray-600 dark:text-gray-200 lg:w-auto lg:pr-4 lg:pt-0">
-                        <ul class="flex flex-col gap-6 tracking-wide lg:flex-row lg:gap-0 lg:text-sm">
-                            {
-                                links.map((link) => (
-                                    <li>
-                                        <a href={link.to} class="hover:text-primary block transition dark:hover:text-white md:px-4">
-                                            <span>{link.label}</span>
-                                        </a>
-                                    </li>
-                                ))
-                            }
-                            
-                        </ul>
-                    </div>
-
-                    <div class="mt-12 lg:mt-0">
-                        <a href="#contact" class="relative flex h-9 w-full items-center justify-center px-4 before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max">
-                            <span class="relative text-sm font-semibold text-white">Contact</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </Container>
-    </nav>
-</header>
-
-<style>
-    #toggle_nav:checked ~ div #hamburger #line {
-        @apply translate-y-1.5 rotate-45;
-    }
-
-    #toggle_nav:checked ~ div #hamburger #line2 {
-        @apply -translate-y-1 -rotate-45;
-    }
-
-    .toggled div:first-child {
-        @apply translate-y-1.5 rotate-45;
-    }
-    .toggled div:last-child {
-        @apply -translate-y-1 -rotate-45;
-    }
-</style>
+  </script>
+)}
