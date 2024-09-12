@@ -2,7 +2,7 @@
   <div aria-hidden="true" class="absolute inset-0 grid grid-cols-2 -space-x-52 opacity-40">
     <div class="blur-[106px] h-56 bg-gradient-to-br from-blue-400 via-purple-200 to-green-400"></div>
     <div class="blur-[106px] h-32 bg-gradient-to-r from-white via-green-400 to-blue-400"></div>
-  </div>
+</div>
   <div class="container mx-auto px-4 relative z-10">
     
     <div class="flex items-center justify-center mb-12">
@@ -11,39 +11,13 @@
     </div>
     <div class="flex flex-col md:flex-row items-center justify-between gap-12">
       <div class="w-full md:w-1/2 relative">
-        <div class="relative w-full h-[600px] max-w-sm mx-auto chatbot-container">
+        <div class="max-w-sm mx-auto rounded-3xl overflow-hidden shadow-[0_10px_20px_rgba(0,0,0,0.2)] transition-shadow duration-300 hover:shadow-[0_20px_30px_rgba(0,0,0,0.3)]">
           <img 
-            src="/images/agriconnect/iphone-background.svg" 
-            alt="iPhone Background" 
-            class="w-full h-full object-contain absolute inset-0 scale-110"
-          />
-          <div class="absolute inset-0 chat-bubbles flex flex-col justify-center items-center">
-            <img 
-              src="/images/agriconnect/chat1-1.svg" 
-              alt="Chat Bubble 1" 
-              class="w-4/5 object-contain bubble bubble-1"
-            />
-            <img 
-              src="/images/agriconnect/chat1-2.svg" 
-              alt="Chat Bubble 2" 
-              class="w-4/5 object-contain bubble bubble-2"
-            />
-            <img 
-              src="/images/agriconnect/chat1-3.svg" 
-              alt="Chat Bubble 3" 
-              class="w-4/5 object-contain bubble bubble-3"
-            />
-            <img 
-              src="/images/agriconnect/chat1-4.svg" 
-              alt="Chat Bubble 4" 
-              class="w-4/5 object-contain bubble bubble-4"
-            />
-            <img 
-              src="/images/agriconnect/chat1-5.svg" 
-              alt="Chat Bubble 5" 
-              class="w-4/5 object-contain bubble bubble-5"
-            />
-          </div>
+            src="/images/agriconnect/chatbot1.gif" 
+            alt="Chatbot Demo" 
+            class="w-full h-auto"
+            style="clip-path: inset(1px round 24px);"
+          >
         </div>
       </div>
       <div class="w-full md:w-1/2 space-y-8">
@@ -52,23 +26,7 @@
           {[
             { icon: "🌍", title: "Multi-lingual", description: "Support in various languages" },
             { icon: "🎙️", title: "Multi-modal", description: "Text, voice, and image interactions" },
-            { icon: "💬", title: "Integrated", description: (
-              <span>
-                Works across messaging platforms: 
-                <span class="whitespace-nowrap">
-                  <img src="/images/telegram-logo.svg" alt="Telegram" class="inline-block w-4 h-4 mx-1" />
-                  Telegram
-                </span>,&nbsp;
-                <span class="whitespace-nowrap">
-                  <img src="/images/whatsapp-logo.svg" alt="WhatsApp" class="inline-block w-4 h-4 mx-1" />
-                  WhatsApp
-                </span>,&nbsp;
-                <span class="whitespace-nowrap">
-                  <img src="/images/line-logo.svg" alt="Line" class="inline-block w-4 h-4 mx-1" />
-                  Line
-                </span>, etc.
-              </span>
-            )},
+            { icon: "💬", title: "Integrated", description: "Works with WhatsApp and Telegram" },
             { icon: "🕰️", title: "Always Available", description: "24/7 support for farmers" },
           ].map((feature) => (
             <div class="bg-white p-6 rounded-lg shadow-md transition-all hover:shadow-lg">
@@ -82,117 +40,3 @@
     </div>
   </div>
 </section>
-
-<style>
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  @keyframes fadeOut {
-    from { opacity: 1; transform: translateY(0); }
-    to { opacity: 0; transform: translateY(-10px); }
-  }
-
-  .bubble {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.5s, transform 0.5s;
-  }
-
-  .bubble-1 { transition-delay: 0.2s; }
-  .bubble-2 { transition-delay: 0.4s; }
-  .bubble-3 { transition-delay: 0.6s; }
-  .bubble-4 { transition-delay: 0.8s; }
-  .bubble-5 { transition-delay: 1s; }
-
-  .chatbot.in-view .bubble {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  .chat-bubbles {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    padding: 10% 5%;
-  }
-
-  .chatbot-container.animate .bubble-1 {
-    animation: fadeIn 0.5s ease-out forwards, fadeOut 0.5s ease-in 4.5s forwards;
-  }
-
-  .chatbot-container.animate .bubble-2 {
-    animation: fadeIn 0.5s ease-out 1s forwards, fadeOut 0.5s ease-in 5s forwards;
-  }
-
-  .chatbot-container.animate .bubble-3 {
-    animation: fadeIn 0.5s ease-out 2s forwards, fadeOut 0.5s ease-in 5.5s forwards;
-  }
-
-  .chatbot-container.animate .bubble-4 {
-    animation: fadeIn 0.5s ease-out 3s forwards, fadeOut 0.5s ease-in 6s forwards;
-  }
-
-  .chatbot-container.animate .bubble-5 {
-    animation: fadeIn 0.5s ease-out 4s forwards, fadeOut 0.5s ease-in 6.5s forwards;
-  }
-</style>
-
-<script>
-  function animateChatbot() {
-    const chatbotContainer = document.querySelector('.chatbot-container');
-    if (chatbotContainer) {
-      chatbotContainer.classList.add('animate');
-      setTimeout(() => {
-        chatbotContainer.classList.remove('animate');
-        setTimeout(animateChatbot, 500); // Start the next animation cycle after a short delay
-      }, 7000); // Total animation duration
-    }
-  }
-
-  function isElementInViewport(el) {
-    const rect = el.getBoundingClientRect();
-    return (
-      rect.top >= 0 &&
-      rect.left >= 0 &&
-      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-    );
-  }
-
-  function handleScroll() {
-    const chatbotSection = document.getElementById('chatbot');
-    if (chatbotSection && isElementInViewport(chatbotSection)) {
-      animateChatbot();
-      window.removeEventListener('scroll', handleScroll);
-    }
-  }
-
-  // Use DOMContentLoaded event to ensure the DOM is fully loaded
-  document.addEventListener('DOMContentLoaded', () => {
-    window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Check initial state
-  });
-
-  const chatbot = document.querySelector('.chatbot');
-  const bubbles = chatbot.querySelectorAll('.bubble');
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        chatbot.classList.add('in-view');
-      } else {
-        chatbot.classList.remove('in-view');
-        bubbles.forEach((bubble) => {
-          bubble.style.opacity = '0';
-          bubble.style.transform = 'translateY(20px)';
-        });
-      }
-    });
-  }, { threshold: 0.5 });
-
-  observer.observe(chatbot);
-</script>
