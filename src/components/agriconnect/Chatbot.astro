@@ -11,38 +11,40 @@
     </div>
     <div class="flex flex-col md:flex-row items-center justify-between gap-12">
       <div class="w-full md:w-1/2 relative">
-        <div class="relative w-full h-[600px] max-w-sm mx-auto chatbot-container">
+        <div class="relative w-full h-[650px] max-w-sm mx-auto chatbot-container">
           <img 
             src="/images/agriconnect/iphone-background.svg" 
             alt="iPhone Background" 
-            class="w-full h-full object-contain absolute inset-0 scale-110"
+            class="w-full h-full object-contain absolute inset-0 scale-105"
           />
-          <div class="absolute inset-0 chat-bubbles flex flex-col justify-center items-center">
+          <div class="absolute inset-0 chat-bubbles flex flex-col justify-center items-start px-10 py-16">
             <img 
               src="/images/agriconnect/chat1-1.svg" 
               alt="Chat Bubble 1" 
-              class="w-4/5 object-contain bubble bubble-1"
+              class="w-full object-contain bubble bubble-1"
             />
             <img 
               src="/images/agriconnect/chat1-2.svg" 
               alt="Chat Bubble 2" 
-              class="w-4/5 object-contain bubble bubble-2"
+              class="w-full object-contain bubble bubble-2 self-end "
             />
             <img 
               src="/images/agriconnect/chat1-3.svg" 
               alt="Chat Bubble 3" 
-              class="w-4/5 object-contain bubble bubble-3"
+              class="w-full object-contain bubble bubble-3 "
             />
             <img 
               src="/images/agriconnect/chat1-4.svg" 
               alt="Chat Bubble 4" 
-              class="w-4/5 object-contain bubble bubble-4"
+              class="w-full object-contain bubble bubble-4 self-end "
             />
-            <img 
-              src="/images/agriconnect/chat1-5.svg" 
-              alt="Chat Bubble 5" 
-              class="w-4/5 object-contain bubble bubble-5"
-            />
+            <div class="w-full flex items-start mt-1">
+              <img 
+                src="/images/agriconnect/chat1-5.svg" 
+                alt="Chat Bubble 5" 
+                class="w-1/5 object-contain bubble bubble-5"
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -84,60 +86,42 @@
 </section>
 
 <style>
+  .bubble {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s, transform 0.5s;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .chatbot-container.animate .bubble-1 {
+    animation: fadeIn 0.5s ease-out forwards, fadeOut 0.5s ease-in 14.5s forwards;
+  }
+
+  .chatbot-container.animate .bubble-2 {
+    animation: fadeIn 0.5s ease-out 1s forwards, fadeOut 0.5s ease-in 14.5s forwards;
+  }
+
+  .chatbot-container.animate .bubble-3 {
+    animation: fadeIn 0.5s ease-out 2s forwards, fadeOut 0.5s ease-in 14.5s forwards;
+  }
+
+  .chatbot-container.animate .bubble-4 {
+    animation: fadeIn 0.5s ease-out 3s forwards, fadeOut 0.5s ease-in 14.5s forwards;
+  }
+
+  .chatbot-container.animate .bubble-5 {
+    animation: fadeIn 0.5s ease-out 4s forwards, fadeOut 0.5s ease-in 14.5s forwards;
+  }
+
   @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
+    from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
   }
 
   @keyframes fadeOut {
     from { opacity: 1; transform: translateY(0); }
-    to { opacity: 0; transform: translateY(-10px); }
-  }
-
-  .bubble {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.5s, transform 0.5s;
-  }
-
-  .bubble-1 { transition-delay: 0.2s; }
-  .bubble-2 { transition-delay: 0.4s; }
-  .bubble-3 { transition-delay: 0.6s; }
-  .bubble-4 { transition-delay: 0.8s; }
-  .bubble-5 { transition-delay: 1s; }
-
-  .chatbot.in-view .bubble {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  .chat-bubbles {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    padding: 10% 5%;
-  }
-
-  .chatbot-container.animate .bubble-1 {
-    animation: fadeIn 0.5s ease-out forwards, fadeOut 0.5s ease-in 4.5s forwards;
-  }
-
-  .chatbot-container.animate .bubble-2 {
-    animation: fadeIn 0.5s ease-out 1s forwards, fadeOut 0.5s ease-in 5s forwards;
-  }
-
-  .chatbot-container.animate .bubble-3 {
-    animation: fadeIn 0.5s ease-out 2s forwards, fadeOut 0.5s ease-in 5.5s forwards;
-  }
-
-  .chatbot-container.animate .bubble-4 {
-    animation: fadeIn 0.5s ease-out 3s forwards, fadeOut 0.5s ease-in 6s forwards;
-  }
-
-  .chatbot-container.animate .bubble-5 {
-    animation: fadeIn 0.5s ease-out 4s forwards, fadeOut 0.5s ease-in 6.5s forwards;
+    to { opacity: 0; transform: translateY(-20px); }
   }
 </style>
 
@@ -149,7 +133,7 @@
       setTimeout(() => {
         chatbotContainer.classList.remove('animate');
         setTimeout(animateChatbot, 500); // Start the next animation cycle after a short delay
-      }, 7000); // Total animation duration
+      }, 15000); // Total animation duration
     }
   }
 
