@@ -16,22 +16,17 @@
       <div class="md:w-1/2">
         <p class="text-xl mb-6 text-gray-600">Get real-time insights into farmer interactions and needs:</p>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <div class="bg-white p-4 rounded-lg shadow-md">
-            <h3 class="font-semibold text-green-700 mb-2">Engagement Tracking</h3>
-            <p class="text-gray-600">Monitor user activity and popular discussion topics</p>
-          </div>
-          <div class="bg-white p-4 rounded-lg shadow-md">
-            <h3 class="font-semibold text-green-700 mb-2">FAQ Analysis</h3>
-            <p class="text-gray-600">Identify common questions and concerns among farmers</p>
-          </div>
-          <div class="bg-white p-4 rounded-lg shadow-md">
-            <h3 class="font-semibold text-green-700 mb-2">Seasonal Trends</h3>
-            <p class="text-gray-600">Track changes in agricultural queries throughout the year</p>
-          </div>
-          <div class="bg-white p-4 rounded-lg shadow-md">
-            <h3 class="font-semibold text-green-700 mb-2">Resource Optimization</h3>
-            <p class="text-gray-600">Pinpoint areas for targeted support and resource allocation</p>
-          </div>
+          {[
+            { title: "Engagement Tracking", description: "Monitor user activity and popular discussion topics" },
+            { title: "FAQ Analysis", description: "Identify common questions and concerns among farmers" },
+            { title: "Seasonal Trends", description: "Track changes in agricultural queries throughout the year" },
+            { title: "Resource Optimization", description: "Pinpoint areas for targeted support and resource allocation" },
+          ].map((feature) => (
+            <div class="bg-white p-4 rounded-lg shadow-md transition-all hover:shadow-lg">
+              <h3 class="font-semibold text-green-700 mb-2">{feature.title}</h3>
+              <p class="text-gray-600">{feature.description}</p>
+            </div>
+          ))}
         </div>
       </div>
       <div class="md:w-1/2 bg-white p-2 rounded-xl shadow-2xl">

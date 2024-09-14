@@ -42,7 +42,11 @@ import Container from "./Container.astro"
               <textarea name="message" class="p-2 border border-gray-300 rounded-md w-full"></textarea>
             </label>
             <!-- your other form fields go here -->
-            <button type="submit" class="p-2 bg-primary text-white rounded-md">Send</button>
+            <button type="submit" class="relative flex h-11 w-full items-center justify-center px-6 before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max">
+              <span class="relative text-base font-semibold text-white">
+                Send
+              </span>
+            </button>
           </form>
         </div>
       </div>
