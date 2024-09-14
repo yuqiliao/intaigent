@@ -1,9 +1,9 @@
 ---
 import Container from "./Container.astro"
-import chatbotIcon from '../../public/images/agriconnect/chatbotArtboard 1.svg';
-import dashboardIcon from '../../public/images/agriconnect/dashboardArtboard 1.svg';
-import cmsIcon from '../../public/images/agriconnect/cmsArtboard 1.svg';
-import marketIcon from '../../public/images/agriconnect/marketArtboard 1.svg';
+import chatbotIcon from '/images/agriconnect/chatbotArtboard 1.svg';
+import dashboardIcon from '/images/agriconnect/dashboardArtboard 1.svg';
+import cmsIcon from '/images/agriconnect/cmsArtboard 1.svg';
+import marketIcon from '/images/agriconnect/marketArtboard 1.svg';
 ---
 
 <section id="product" >
@@ -25,9 +25,14 @@ import marketIcon from '../../public/images/agriconnect/marketArtboard 1.svg';
       <p class="text-lg text-gray-600 mb-8 max-w-3xl mx-auto text-center">
         <b>Agriconnect</b> is designed to revolutionize farming by connecting farmers with real-time data and insights, empowering them to make informed decisions and optimize their operations.
       </p>
-      <div class="text-center">
-        <a href="/agriconnect" class="inline-block bg-primary text-white font-semibold py-3 px-6 rounded-lg hover:bg-primary-dark transition-colors">
-          Learn More
+      <div class="flex justify-center">
+        <a
+          href="/agriconnect"
+          class="relative flex h-11 w-full items-center justify-center px-6 before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max"
+        >
+          <span class="relative text-base font-semibold text-white">
+            Learn More
+          </span>
         </a>
       </div>
     </div>
