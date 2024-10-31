@@ -1,42 +1,136 @@
-<section id="chatbot" class="relative py-16">
+<section class="py-16 relative">
   <div aria-hidden="true" class="absolute inset-0 grid grid-cols-2 -space-x-52 opacity-40">
     <div class="blur-[106px] h-56 bg-gradient-to-br from-blue-400 via-purple-200 to-green-400"></div>
     <div class="blur-[106px] h-32 bg-gradient-to-r from-white via-green-400 to-blue-400"></div>
-</div>
+  </div>
   <div class="container mx-auto px-4 relative z-10">
-    
     <div class="flex items-center justify-center mb-12">
       <img src="/images/agriconnect/chatbotArtboard 1.svg" alt="Chatbot Icon" class="w-12 h-12 mr-4">
       <h2 class="text-4xl font-bold text-center text-gray-800">AI-Powered Chatbot</h2>
     </div>
-    <div class="flex flex-col md:flex-row items-center justify-between gap-12">
-      <div class="w-full md:w-1/2 relative">
-        <div class="max-w-sm mx-auto rounded-3xl overflow-hidden shadow-[0_10px_20px_rgba(0,0,0,0.2)] transition-shadow duration-300 hover:shadow-[0_20px_30px_rgba(0,0,0,0.3)]">
-          <img 
-            src="/images/agriconnect/chatbot1.gif" 
-            alt="Chatbot Demo" 
-            class="w-full h-auto"
-            style="clip-path: inset(1px round 24px);"
-          >
+    
+    <div class="flex flex-col md:flex-row justify-between gap-32">
+      {/* Left side - Stacked GIFs */}
+      <div class="w-full sm:w-[45%] lg:w-[30%]">
+        <div class="relative max-w-sm mx-auto">
+          {/* Instruction */}
+          <div class="instruction-hint absolute left-1/2 -top-12 -translate-x-1/2 text-center z-30">
+            <span class="inline-block bg-white/90 px-4 py-2 rounded-full shadow-md text-gray-600 font-medium text-sm whitespace-nowrap">
+              Click cards to switch language
+            </span>
+          </div>
+
+          {/* Cards container */}
+          <div class="relative w-full aspect-[3/4]">
+            {/* English Card */}
+            <div id="english-card" 
+                 class="absolute inset-0 transition-all duration-500 cursor-pointer"
+                 style="transform: translateX(0); z-index: 10;">
+              <div class="rounded-3xl overflow-hidden shadow-[0_10px_20px_rgba(0,0,0,0.2)] transition-shadow duration-300 hover:shadow-[0_20px_30px_rgba(0,0,0,0.3)]">
+                <img 
+                  src="/images/agriconnect/chatbot1.gif" 
+                  alt="Chatbot Demo in English" 
+                  class="w-full h-auto"
+                  style="clip-path: inset(1px round 24px);"
+                >
+                <div class="absolute top-3 left-3 bg-white/90 px-3 py-1.5 rounded-full text-sm font-medium">
+                  English
+                </div>
+              </div>
+            </div>
+
+            {/* Hindi Card */}
+            <div id="hindi-card"
+                 class="absolute inset-0 transition-all duration-500 cursor-pointer"
+                 style="transform: translateX(40%) scale(0.98); z-index: 5;">
+              <div class="rounded-3xl overflow-hidden shadow-[0_10px_20px_rgba(0,0,0,0.2)] transition-shadow duration-300 hover:shadow-[0_20px_30px_rgba(0,0,0,0.3)]">
+                <img 
+                  src="/images/agriconnect/chatbot1-hindi.gif" 
+                  alt="Chatbot Demo in Hindi" 
+                  class="w-full h-auto"
+                  style="clip-path: inset(1px round 24px);"
+                >
+                <div class="absolute top-3 left-3 bg-white/90 px-3 py-1.5 rounded-full text-sm font-medium">
+                  हिंदी
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="w-full md:w-1/2 space-y-8">
-        <h3 class="text-2xl font-semibold mb-6 text-gray-700">Key Features</h3>
+
+      {/* Right side - Key Features */}
+      <div class="w-full md:w-1/2 mt-32 sm:mt-16">
+        <h2 class="text-2xl font-bold mb-8">Key Features</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-          {[
-            { icon: "🌍", title: "Multi-lingual", description: "Support in various languages" },
-            { icon: "🎙️", title: "Multi-modal", description: "Text, voice, and image interactions" },
-            { icon: "💬", title: "Integrated", description: "Works with WhatsApp and Telegram" },
-            { icon: "🕰️", title: "Always Available", description: "24/7 support for farmers" },
-          ].map((feature) => (
-            <div class="bg-white p-6 rounded-lg shadow-md transition-all hover:shadow-lg">
-              <div class="text-3xl mb-2">{feature.icon}</div>
-              <h4 class="text-lg font-semibold mb-2 text-gray-800">{feature.title}</h4>
-              <p class="text-gray-600">{feature.description}</p>
-            </div>
-          ))}
+          <div class="bg-white p-6 rounded-xl shadow-md">
+            <div class="text-4xl mb-4">🌍</div>
+            <h3 class="font-semibold text-lg mb-2">Multi-lingual</h3>
+            <p class="text-gray-600">Support in various languages</p>
+          </div>
+          <div class="bg-white p-6 rounded-xl shadow-md">
+            <div class="text-4xl mb-4">🎙️</div>
+            <h3 class="font-semibold text-lg mb-2">Multi-modal</h3>
+            <p class="text-gray-600">Text, voice, and image interactions</p>
+          </div>
+          <div class="bg-white p-6 rounded-xl shadow-md">
+            <div class="text-4xl mb-4">💬</div>
+            <h3 class="font-semibold text-lg mb-2">Integrated</h3>
+            <p class="text-gray-600">Works with WhatsApp and Telegram</p>
+          </div>
+          <div class="bg-white p-6 rounded-xl shadow-md">
+            <div class="text-4xl mb-4">⏰</div>
+            <h3 class="font-semibold text-lg mb-2">Always Available</h3>
+            <p class="text-gray-600">24/7 support for farmers</p>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
+
+<style>
+  .instruction-hint {
+    animation: float 2s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(-8px); }
+  }
+</style>
+
+<script is:inline>
+  let isHindiOnTop = false;
+  
+  const englishCard = document.getElementById('english-card');
+  const hindiCard = document.getElementById('hindi-card');
+  const instructionHint = document.querySelector('.instruction-hint');
+  
+  function toggleCards() {
+    if (!isHindiOnTop) {
+      // Bring Hindi to front
+      hindiCard.style.transform = 'translateX(0)';
+      hindiCard.style.zIndex = '10';
+      englishCard.style.transform = 'translateX(40%) scale(0.98)';
+      englishCard.style.zIndex = '5';
+    } else {
+      // Bring English to front
+      englishCard.style.transform = 'translateX(0)';
+      englishCard.style.zIndex = '10';
+      hindiCard.style.transform = 'translateX(40%) scale(0.98)';
+      hindiCard.style.zIndex = '5';
+    }
+    
+    isHindiOnTop = !isHindiOnTop;
+    
+    // Hide instruction after first click
+    instructionHint.style.opacity = '0';
+    setTimeout(() => {
+      instructionHint.style.display = 'none';
+    }, 500);
+  }
+  
+  englishCard.addEventListener('click', toggleCards);
+  hindiCard.addEventListener('click', toggleCards);
+</script>
