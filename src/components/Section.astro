@@ -1,0 +1,63 @@
+---
+interface Props {
+  id?: string;
+  className?: string;
+  children: any;
+}
+
+const { id, className = "" } = Astro.props;
+---
+
+<section 
+  id={id} 
+  class:list={[
+    "relative py-24 transition-all duration-700 opacity-0 translate-y-4",
+    "motion-safe:animate-fade-in",
+    className
+  ]}
+>
+  <slot />
+</section>
+
+<style>
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(1rem);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.7s ease-out forwards;
+  }
+
+  /* Intersection Observer will add this class */
+  .visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+
+<script>
+  // Intersection Observer for fade-in animation
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target); // Stop observing once visible
+      }
+    });
+  }, {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  });
+
+  // Observe all sections
+  document.querySelectorAll('section').forEach(section => {
+    observer.observe(section);
+  });
+</script> 
