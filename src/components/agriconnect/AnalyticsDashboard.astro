@@ -1,4 +1,4 @@
-<section class="relative min-h-screen flex flex-col justify-center py-16 mt-32">
+<section class="relative min-h-screen flex flex-col justify-center py-16 mt-48">
   <div aria-hidden="true" class="absolute inset-0 grid grid-cols-2 -space-x-52 opacity-40">
     <div class="blur-[106px] h-56 bg-gradient-to-br from-green-500 via-purple-100 to-blue-400"></div>
     <div class="blur-[106px] h-32 bg-gradient-to-r from-blue-200 via-purple-200 to-green-400"></div>
@@ -10,23 +10,40 @@
         alt="Dashboard Icon"
         class="w-12 h-12 mr-4"
       />
-      <h2 class="text-4xl font-bold text-black">User Analytics Dashboard</h2>
+      <h2 class="text-4xl font-bold text-black">Impact Analytics Dashboard</h2>
     </div>
     <div class="flex flex-col md:flex-row items-center gap-8">
       <div class="md:w-1/2">
         <p class="text-xl mb-6 text-gray-600">Get real-time insights into farmer interactions and needs:</p>
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          {[
-            { title: "Engagement Tracking", description: "Monitor user activity and popular discussion topics" },
-            { title: "FAQ Analysis", description: "Identify common questions and concerns among farmers" },
-            { title: "Seasonal Trends", description: "Track changes in agricultural queries throughout the year" },
-            { title: "Resource Optimization", description: "Pinpoint areas for targeted support and resource allocation" },
-          ].map((feature) => (
-            <div class="bg-white p-4 rounded-lg shadow-md transition-all hover:shadow-lg">
-              <h3 class="font-semibold text-green-700 mb-2">{feature.title}</h3>
-              <p class="text-gray-600">{feature.description}</p>
+        <div class="grid grid-cols-1 gap-8">
+          {/* First row with two boxes */}
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {[
+              { 
+                title: "See what farmers are asking and learning", 
+                description: "Understand what farmers need most and when they need it, from popular topics to regional trends."
+              },
+              { 
+                title: "Track real behavior change", 
+                description: "Measure how farmers adopt new practices and see the impact on their yields and success."
+              }
+            ].map((feature) => (
+              <div class="bg-white p-8 rounded-lg shadow-md transition-all hover:shadow-lg hover:scale-[1.02]">
+                <h3 class="text-lg font-semibold mb-2 text-green-700">{feature.title}</h3>
+                <p class="text-gray-600">{feature.description}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* Second row with one centered box */}
+          <div class="flex justify-center">
+            <div class="bg-white p-8 rounded-lg shadow-md transition-all hover:shadow-lg hover:scale-[1.02] w-full md:w-2/3">
+              <h3 class="text-lg font-semibold mb-2 text-green-700">Make smarter decisions</h3>
+              <p class="text-gray-600">
+                Turn insights into action by identifying gaps, improving content, and showing clear results to funders.
+              </p>
             </div>
-          ))}
+          </div>
         </div>
       </div>
       <div class="md:w-1/2 bg-white p-2 rounded-xl shadow-2xl">
