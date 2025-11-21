@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <!-- Simplified Globe Icon with longitude and latitude lines -->
+  <circle cx="256" cy="256" r="180" stroke="currentColor" stroke-width="20" fill="none"/>
+  
+  <!-- Latitude lines (horizontal ellipses) - simplified to 3 lines -->
+  <ellipse cx="256" cy="256" rx="180" ry="100" stroke="currentColor" stroke-width="15" fill="none"/>
+  <ellipse cx="256" cy="200" rx="160" ry="80" stroke="currentColor" stroke-width="12" fill="none"/>
+  <ellipse cx="256" cy="312" rx="160" ry="80" stroke="currentColor" stroke-width="12" fill="none"/>
+  
+  <!-- Longitude lines (vertical curves) - simplified to 3 lines -->
+  <path d="M 76 256 Q 120 180, 160 120 Q 200 90, 240 100 Q 280 120, 320 180 Q 360 240, 436 256 Q 360 320, 320 380 Q 280 410, 240 400 Q 200 380, 160 320 Q 120 260, 76 256" stroke="currentColor" stroke-width="12" fill="none"/>
+  <path d="M 156 256 Q 180 200, 200 160 Q 220 140, 240 150 Q 260 160, 280 200 Q 300 240, 356 256 Q 300 300, 280 340 Q 260 360, 240 350 Q 220 340, 200 300 Q 180 260, 156 256" stroke="currentColor" stroke-width="12" fill="none"/>
+  <line x1="256" y1="76" x2="256" y2="436" stroke="currentColor" stroke-width="12" stroke-linecap="round"/>
+</svg>

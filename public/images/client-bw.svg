@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <!-- Placeholder: Client/People Icon - Replace with proper design -->
+  <circle cx="256" cy="200" r="60" stroke="currentColor" stroke-width="20" fill="none"/>
+  <path d="M150 400 Q150 300 256 300 Q362 300 362 400" stroke="currentColor" stroke-width="20" fill="none" stroke-linecap="round"/>
+  <circle cx="200" cy="180" r="8" fill="currentColor"/>
+  <circle cx="312" cy="180" r="8" fill="currentColor"/>
+</svg>
