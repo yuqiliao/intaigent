@@ -1,66 +1,85 @@
-<section class="min-h-[65vh] flex items-center overflow-hidden relative pt-16 sm:pt-24">
+<section
+  class="relative min-h-[85vh] flex items-center overflow-hidden pt-24 sm:pt-32 pb-16 sm:pb-20"
+  aria-labelledby="hero-heading"
+  role="banner"
+>
+  <!-- Background gradient with breathing animation -->
   <div aria-hidden="true" class="absolute inset-0 grid grid-cols-2 -space-x-52 opacity-40">
-    <div class="blur-[106px] h-56 bg-gradient-to-br from-green-400 to-blue-400"></div>
+    <div class="blur-[106px] h-56 bg-gradient-to-br from-green-400 to-blue-400 animate-pulse"></div>
     <div class="blur-[106px] h-32 bg-gradient-to-r from-blue-300 to-white-300"></div>
   </div>
+
   <div class="container mx-auto px-4 py-6 z-10">
-    <div class="flex flex-col md:flex-row items-center justify-between">
-      <div class="md:w-[45%] space-y-6 text-center md:text-left">
-        <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 leading-tight">
-          AI <span class="text-blue-600 animate-pulse">Coach</span>
+    <div class="flex flex-col md:flex-row items-center justify-between gap-12 lg:gap-16">
+      <!-- Left: Text content (48% on desktop) -->
+      <div class="hero-content md:w-[48%] space-y-8 text-center md:text-left">
+        <h1 id="hero-heading" class="text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.08] tracking-tight mb-6">
+          <span class="text-gray-900">AI</span>
+          <span class="block mt-1 bg-gradient-to-r from-green-600 via-teal-500 to-blue-500 bg-clip-text text-transparent animate-pulse">
+            Coach
+          </span>
         </h1>
-        <p class="text-lg sm:text-xl text-gray-700 max-w-md mx-auto md:mx-0">
-          Empowering Business Leaders Through <span class="text-green-600 font-semibold">AI-Powered Learning</span>
+        <p class="text-lg sm:text-xl lg:text-2xl text-gray-600 leading-relaxed font-medium max-w-xl mx-auto md:mx-0 mb-8">
+          Empowering Business Leaders Through AI-Powered Learning
         </p>
-        <a href="#chatbot" class="relative inline-block px-6 sm:px-8 py-3 text-base sm:text-lg font-semibold text-white rounded-full shadow-lg transition-all duration-300 before:absolute before:inset-0 before:rounded-full before:bg-green-600 before:transition before:duration-300 hover:before:scale-105 active:before:scale-95 active:duration-75">
-          <span class="relative">Get Started</span>
+        <a
+          href="#chatbot"
+          class="cta-button inline-flex items-center justify-center gap-2 min-h-[56px] px-10 sm:px-12 text-base sm:text-lg font-semibold rounded-full bg-gradient-to-br from-green-600 via-green-500 to-blue-600 text-white shadow-lg shadow-green-600/30 transition-all duration-300 hover:shadow-xl hover:shadow-green-600/40 hover:scale-[1.03] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-green-600/50"
+          aria-label="Get started with AgriConnect AI Coach"
+        >
+          <span>Get Started</span>
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
         </a>
       </div>
-      <div class="md:w-[55%] flex justify-center relative mt-8 md:mt-0">
+
+      <!-- Right: Arc constellation (52% on desktop) -->
+      <div class="md:w-[52%] flex justify-center relative mt-8 md:mt-0">
         <div class="absolute inset-[9%] bg-gradient-to-r from-green-400 to-blue-400 rounded-full filter blur-3xl opacity-20 animate-pulse"></div>
-        <div class="relative z-10 w-full max-w-md mx-auto">
-          <!-- Modern grid layout with floating icons -->
-          <div class="grid grid-cols-3 gap-6 items-center">
-            <!-- Top row - 2 icons -->
-            <div class="col-start-1 flex justify-end">
-              <div class="icon-float" style="animation-delay: 0s;">
-                <div class="w-20 h-20 rounded-2xl bg-white/80 backdrop-blur-sm flex items-center justify-center shadow-lg hover:shadow-xl transition-all hover:scale-110 border border-blue-200/50 icon-container icon-blue">
-                  <img src="/images/agriconnect/chatbotArtboard 1.svg" alt="Chatbot" class="w-11 h-11 opacity-70">
-                </div>
+        <div class="relative w-full max-w-lg mx-auto z-10">
+          <div class="icon-constellation relative h-[350px] sm:h-[450px] lg:h-[500px]">
+
+            <!-- Icon 1: Chatbot (top-left) -->
+            <div class="icon-wrapper absolute" style="top: 8%; left: 10%;">
+              <div class="icon-card" data-stagger="1" style="transform: rotate(-8deg);">
+                <img src="/images/agriconnect/chatbotArtboard 1.svg" alt="AI-powered chatbot coaching" class="w-12 h-12 opacity-75" />
               </div>
-            </div>
-            <div class="col-start-3 flex justify-start">
-              <div class="icon-float" style="animation-delay: 0.5s;">
-                <div class="w-20 h-20 rounded-2xl bg-white/80 backdrop-blur-sm flex items-center justify-center shadow-lg hover:shadow-xl transition-all hover:scale-110 border border-orange-200/50 icon-container icon-orange">
-                  <img src="/images/agriconnect/marketArtboard 1.svg" alt="Market" class="w-11 h-11 opacity-70">
-                </div>
-              </div>
+              <span class="icon-label">AI Coach</span>
             </div>
 
-            <!-- Middle row - center icon (larger) -->
-            <div class="col-start-2 row-start-2 flex justify-center">
-              <div class="icon-float-slow" style="animation-delay: 0.2s;">
-                <div class="w-28 h-28 rounded-3xl bg-white/90 backdrop-blur-sm flex items-center justify-center shadow-xl hover:shadow-2xl transition-all hover:scale-110 border-2 border-teal-300/60 icon-container icon-teal">
-                  <img src="/images/agriconnect/userArtboard 1.svg" alt="User" class="w-16 h-16 opacity-75">
-                </div>
+            <!-- Icon 2: Market (top-right) -->
+            <div class="icon-wrapper absolute" style="top: 5%; right: 8%;">
+              <div class="icon-card" data-stagger="2" style="transform: rotate(5deg);">
+                <img src="/images/agriconnect/marketArtboard 1.svg" alt="Agricultural marketplace" class="w-12 h-12 opacity-75" />
               </div>
+              <span class="icon-label">Marketplace</span>
             </div>
 
-            <!-- Bottom row - 2 icons -->
-            <div class="col-start-1 row-start-3 flex justify-end">
-              <div class="icon-float" style="animation-delay: 0.8s;">
-                <div class="w-20 h-20 rounded-2xl bg-white/80 backdrop-blur-sm flex items-center justify-center shadow-lg hover:shadow-xl transition-all hover:scale-110 border border-purple-200/50 icon-container icon-purple">
-                  <img src="/images/agriconnect/cmsArtboard 1.svg" alt="CMS" class="w-11 h-11 opacity-70">
-                </div>
+            <!-- Icon 3: User (center, largest) -->
+            <div class="icon-wrapper absolute" style="top: 40%; left: 50%; transform: translate(-50%, -50%);">
+              <div class="icon-card icon-card-center" data-stagger="3">
+                <img src="/images/agriconnect/userArtboard 1.svg" alt="Business leaders and learners" class="w-16 h-16 opacity-80" />
               </div>
+              <span class="icon-label">Learners</span>
             </div>
-            <div class="col-start-3 row-start-3 flex justify-start">
-              <div class="icon-float" style="animation-delay: 0.3s;">
-                <div class="w-20 h-20 rounded-2xl bg-white/80 backdrop-blur-sm flex items-center justify-center shadow-lg hover:shadow-xl transition-all hover:scale-110 border border-green-200/50 icon-container icon-green">
-                  <img src="/images/agriconnect/dashboardArtboard 1.svg" alt="Dashboard" class="w-11 h-11 opacity-70">
-                </div>
+
+            <!-- Icon 4: CMS (bottom-left) -->
+            <div class="icon-wrapper absolute" style="bottom: 12%; left: 12%;">
+              <div class="icon-card" data-stagger="4" style="transform: rotate(-5deg);">
+                <img src="/images/agriconnect/cmsArtboard 1.svg" alt="Content management system" class="w-12 h-12 opacity-75" />
               </div>
+              <span class="icon-label">Content</span>
             </div>
+
+            <!-- Icon 5: Dashboard (bottom-right) -->
+            <div class="icon-wrapper absolute" style="bottom: 8%; right: 10%;">
+              <div class="icon-card" data-stagger="5" style="transform: rotate(6deg);">
+                <img src="/images/agriconnect/dashboardArtboard 1.svg" alt="Analytics dashboard" class="w-12 h-12 opacity-75" />
+              </div>
+              <span class="icon-label">Analytics</span>
+            </div>
+
           </div>
         </div>
       </div>
@@ -69,7 +88,85 @@
 </section>
 
 <style>
-  @keyframes icon-float {
+  /* Base state - invisible before entrance animation */
+  .hero-content,
+  .icon-constellation {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  /* Visible state after intersection observer triggers */
+  .hero-content.is-visible,
+  .icon-constellation.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  /* Staggered entrance animation for icon wrappers */
+  .icon-constellation.is-visible .icon-wrapper:nth-child(1) {
+    animation: fadeInScale 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.1s backwards;
+  }
+  .icon-constellation.is-visible .icon-wrapper:nth-child(2) {
+    animation: fadeInScale 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.2s backwards;
+  }
+  .icon-constellation.is-visible .icon-wrapper:nth-child(3) {
+    animation: fadeInScale 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.3s backwards;
+  }
+  .icon-constellation.is-visible .icon-wrapper:nth-child(4) {
+    animation: fadeInScale 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.4s backwards;
+  }
+  .icon-constellation.is-visible .icon-wrapper:nth-child(5) {
+    animation: fadeInScale 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.5s backwards;
+  }
+
+  @keyframes fadeInScale {
+    from {
+      opacity: 0;
+      transform: scale(0.9) translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+
+  /* Icon wrapper to contain card and label */
+  .icon-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  /* Floating animation for icons */
+  .icon-wrapper:nth-child(1) .icon-card {
+    animation: iconFloat 4s ease-in-out infinite;
+    animation-delay: 0s;
+  }
+
+  .icon-wrapper:nth-child(2) .icon-card {
+    animation: iconFloat 4s ease-in-out infinite;
+    animation-delay: 0.5s;
+  }
+
+  .icon-wrapper:nth-child(3) .icon-card {
+    animation: iconFloatSlow 5s ease-in-out infinite;
+    animation-delay: 0.2s;
+  }
+
+  .icon-wrapper:nth-child(4) .icon-card {
+    animation: iconFloat 4s ease-in-out infinite;
+    animation-delay: 0.8s;
+  }
+
+  .icon-wrapper:nth-child(5) .icon-card {
+    animation: iconFloat 4s ease-in-out infinite;
+    animation-delay: 0.3s;
+  }
+
+  @keyframes iconFloat {
     0%, 100% {
       transform: translateY(0px) translateX(0px);
     }
@@ -84,7 +181,7 @@
     }
   }
 
-  @keyframes icon-float-slow {
+  @keyframes iconFloatSlow {
     0%, 100% {
       transform: translateY(0px) scale(1);
     }
@@ -93,20 +190,46 @@
     }
   }
 
-  .icon-float {
-    animation: icon-float 4s ease-in-out infinite;
-  }
-
-  .icon-float-slow {
-    animation: icon-float-slow 5s ease-in-out infinite;
-  }
-
-  /* Subtle color tints for icon containers */
-  .icon-container {
+  /* Glassmorphic icon cards - Apple-quality material */
+  .icon-card {
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    padding: 1.5rem;
+    box-shadow:
+      0 4px 16px rgba(0, 0, 0, 0.04),
+      0 8px 32px rgba(0, 0, 0, 0.06),
+      inset 0 1px 0 rgba(255, 255, 255, 0.4);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
     position: relative;
   }
 
-  .icon-container::before {
+  .icon-card-center {
+    padding: 2rem;
+    width: 130px;
+    height: 130px;
+    border: 1.5px solid rgba(255, 255, 255, 0.95);
+    box-shadow:
+      0 8px 24px rgba(0, 0, 0, 0.06),
+      0 12px 48px rgba(0, 0, 0, 0.08),
+      inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  }
+
+  .icon-card:hover {
+    box-shadow:
+      0 12px 24px rgba(0, 0, 0, 0.08),
+      0 16px 48px rgba(0, 0, 0, 0.1),
+      inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  }
+
+  /* Subtle color tints for icon containers on hover */
+  .icon-card::before {
     content: '';
     position: absolute;
     inset: 0;
@@ -115,27 +238,99 @@
     transition: opacity 0.3s ease;
   }
 
-  .icon-blue::before {
-    background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(147, 197, 253, 0.05));
+  .icon-card[data-stagger="1"]::before {
+    background: linear-gradient(135deg, rgba(49, 170, 226, 0.15), rgba(147, 197, 253, 0.08));
   }
 
-  .icon-orange::before {
-    background: linear-gradient(135deg, rgba(251, 146, 60, 0.1), rgba(254, 215, 170, 0.05));
+  .icon-card[data-stagger="2"]::before {
+    background: linear-gradient(135deg, rgba(251, 146, 60, 0.15), rgba(254, 215, 170, 0.08));
   }
 
-  .icon-teal::before {
-    background: linear-gradient(135deg, rgba(20, 184, 166, 0.15), rgba(153, 246, 228, 0.08));
+  .icon-card[data-stagger="3"]::before {
+    background: linear-gradient(135deg, rgba(20, 184, 166, 0.2), rgba(153, 246, 228, 0.1));
   }
 
-  .icon-purple::before {
-    background: linear-gradient(135deg, rgba(168, 85, 247, 0.1), rgba(216, 180, 254, 0.05));
+  .icon-card[data-stagger="4"]::before {
+    background: linear-gradient(135deg, rgba(168, 85, 247, 0.15), rgba(216, 180, 254, 0.08));
   }
 
-  .icon-green::before {
-    background: linear-gradient(135deg, rgba(34, 197, 94, 0.1), rgba(187, 247, 208, 0.05));
+  .icon-card[data-stagger="5"]::before {
+    background: linear-gradient(135deg, rgba(34, 197, 94, 0.15), rgba(187, 247, 208, 0.08));
   }
 
-  .icon-container:hover::before {
+  .icon-card:hover::before {
     opacity: 1;
   }
+
+  .icon-label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #374151;
+    text-align: center;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+  }
+
+  .icon-card:hover .icon-label {
+    opacity: 1;
+  }
+
+  /* Focus states for accessibility */
+  .icon-card:focus-visible,
+  .cta-button:focus-visible {
+    outline: 3px solid #31aae2;
+    outline-offset: 4px;
+  }
+
+  /* Responsive adjustments for mobile */
+  @media (max-width: 767px) {
+    .icon-constellation { height: 350px !important; }
+
+    /* Adjust icon positions for smaller space */
+    .icon-wrapper:nth-child(1) { top: 5% !important; left: 5% !important; }
+    .icon-wrapper:nth-child(2) { top: 5% !important; right: 5% !important; }
+    .icon-wrapper:nth-child(4) { bottom: 5% !important; left: 5% !important; }
+    .icon-wrapper:nth-child(5) { bottom: 5% !important; right: 5% !important; }
+  }
+
+  /* Accessibility: Respect reduced motion preference */
+  @media (prefers-reduced-motion: reduce) {
+    .hero-content,
+    .icon-constellation,
+    .icon-card,
+    .cta-button {
+      animation: none !important;
+      transition: none !important;
+      opacity: 1 !important;
+      transform: none !important;
+    }
+
+    .icon-card:hover {
+      transform: none !important;
+    }
+  }
 </style>
+
+<script>
+  // Intersection Observer for entrance animation
+  const observerOptions = {
+    threshold: 0.15,
+    rootMargin: '0px 0px -80px 0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  // Observe text content and icon constellation
+  const heroContent = document.querySelector('.hero-content');
+  const iconConstellation = document.querySelector('.icon-constellation');
+
+  if (heroContent) observer.observe(heroContent);
+  if (iconConstellation) observer.observe(iconConstellation);
+</script>
