@@ -228,13 +228,13 @@
       inset 0 1px 0 rgba(255, 255, 255, 0.5);
   }
 
-  /* Subtle color tints for icon containers on hover */
+  /* Subtle color tints for icon containers always visible */
   .icon-card::before {
     content: '';
     position: absolute;
     inset: 0;
     border-radius: inherit;
-    opacity: 0;
+    opacity: 1;
     transition: opacity 0.3s ease;
   }
 
@@ -259,7 +259,7 @@
   }
 
   .icon-card:hover::before {
-    opacity: 1;
+    opacity: 0.85;
   }
 
   .icon-label {
