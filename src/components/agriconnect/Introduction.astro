@@ -18,93 +18,50 @@
       </div>
       <div class="md:w-[55%] flex justify-center relative mt-8 md:mt-0">
         <div class="absolute inset-[9%] bg-gradient-to-r from-green-400 to-blue-400 rounded-full filter blur-3xl opacity-20 animate-pulse"></div>
-        <div class="relative z-10 w-full h-full">
-          <svg viewBox="0 0 400 400" class="w-full h-full">
-            <defs>
-              <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" style="stop-color:#4CAF50;stop-opacity:1" />
-                <stop offset="100%" style="stop-color:#2196F3;stop-opacity:1" />
-              </linearGradient>
-              <image id="icon1" href="/images/agriconnect/chatbotArtboard 1.svg" width="60" height="60"/>
-              <image id="icon2" href="/images/agriconnect/marketArtboard 1.svg" width="60" height="60"/>
-              <image id="icon3" href="/images/agriconnect/userArtboard 1.svg" width="80" height="80"/>
-              <image id="icon4" href="/images/agriconnect/cmsArtboard 1.svg" width="60" height="60"/>
-              <image id="icon5" href="/images/agriconnect/dashboardArtboard 1.svg" width="60" height="60"/>
-            </defs>
-            
-            <!-- Rotating group for outer icons -->
-            <g class="rotate-group">
-              <!-- Asymmetrical Morphing Connections -->
-              <path d="M110,110 Q200,50 290,110" fill="none" stroke="url(#grad1)" stroke-width="2" opacity="0.6">
-                <animate attributeName="d" dur="10s" repeatCount="indefinite" values="
-                  M110,110 Q200,50 290,110;
-                  M110,110 Q200,70 290,110;
-                  M110,110 Q200,50 290,110"
-                />
-              </path>
-              <path d="M110,110 Q60,200 110,290" fill="none" stroke="url(#grad1)" stroke-width="2" opacity="0.6">
-                <animate attributeName="d" dur="12s" repeatCount="indefinite" values="
-                  M110,110 Q60,200 110,290;
-                  M110,110 Q80,200 110,290;
-                  M110,110 Q60,200 110,290"
-                />
-              </path>
-              <path d="M290,110 Q340,200 290,290" fill="none" stroke="url(#grad1)" stroke-width="2" opacity="0.6">
-                <animate attributeName="d" dur="11s" repeatCount="indefinite" values="
-                  M290,110 Q340,200 290,290;
-                  M290,110 Q320,200 290,290;
-                  M290,110 Q340,200 290,290"
-                />
-              </path>
-              <path d="M110,290 Q200,350 290,290" fill="none" stroke="url(#grad1)" stroke-width="2" opacity="0.6">
-                <animate attributeName="d" dur="13s" repeatCount="indefinite" values="
-                  M110,290 Q200,350 290,290;
-                  M110,290 Q200,330 290,290;
-                  M110,290 Q200,350 290,290"
-                />
-              </path>
-              
-              <!-- Inner Connections (dotted) -->
-              <path d="M110,110 C140,140 160,160 190,190" fill="none" stroke="url(#grad1)" stroke-width="2" opacity="0.6" stroke-dasharray="5,5">
-                <animate attributeName="d" dur="14s" repeatCount="indefinite" values="
-                  M110,110 C140,140 160,160 190,190;
-                  M110,110 C130,150 170,150 190,190;
-                  M110,110 C140,140 160,160 190,190"
-                />
-              </path>
-              <path d="M210,210 C240,220 260,260 290,290" fill="none" stroke="url(#grad1)" stroke-width="2" opacity="0.6" stroke-dasharray="5,5">
-                <animate attributeName="d" dur="15s" repeatCount="indefinite" values="
-                  M210,210 C240,220 260,260 290,290;
-                  M210,210 C250,230 250,270 290,290;
-                  M210,210 C240,220 260,260 290,290"
-                />
-              </path>
-              
-              <!-- Outer Icons with borders -->
-              <g transform="translate(100,100)">
-                <circle r="40" fill="#f0f9ff" fill-opacity="1" stroke="#31aae2" stroke-width="2"/>
-                <use href="#icon1" x="-30" y="-30" class="counter-rotate"/>
-              </g>
-              <g transform="translate(300,100)">
-                <circle r="40" fill="#fff7ed" fill-opacity="1" stroke="#FF9800" stroke-width="2"/>
-                <use href="#icon2" x="-30" y="-30" class="counter-rotate"/>
-              </g>
-              <g transform="translate(100,300)">
-                <circle r="40" fill="#faf5ff" fill-opacity="1" stroke="#9C27B0" stroke-width="2"/>
-                <use href="#icon4" x="-30" y="-30" class="counter-rotate"/>
-              </g>
-              <g transform="translate(300,300)">
-                <circle r="40" fill="#f0fdf4" fill-opacity="1" stroke="#4CAF50" stroke-width="2"/>
-                <use href="#icon5" x="-30" y="-30" class="counter-rotate"/>
-              </g>
-            </g>
-            
-            <!-- Central Icon -->
-            <g transform="translate(200,200)">
-              <circle r="50" fill="#f0fdfa" fill-opacity="1" stroke="#009688" stroke-width="2"/>
-              <use href="#icon3" x="-40" y="-40"/>
-            </g>
-          </svg>
+        <div class="relative z-10 w-full max-w-md mx-auto">
+          <!-- Modern grid layout with floating icons -->
+          <div class="grid grid-cols-3 gap-6 items-center">
+            <!-- Top row - 2 icons -->
+            <div class="col-start-1 flex justify-end">
+              <div class="icon-float" style="animation-delay: 0s;">
+                <div class="w-20 h-20 rounded-2xl bg-white/80 backdrop-blur-sm flex items-center justify-center shadow-lg hover:shadow-xl transition-all hover:scale-110 border border-blue-200/50 icon-container icon-blue">
+                  <img src="/images/agriconnect/chatbotArtboard 1.svg" alt="Chatbot" class="w-11 h-11 opacity-70">
+                </div>
+              </div>
+            </div>
+            <div class="col-start-3 flex justify-start">
+              <div class="icon-float" style="animation-delay: 0.5s;">
+                <div class="w-20 h-20 rounded-2xl bg-white/80 backdrop-blur-sm flex items-center justify-center shadow-lg hover:shadow-xl transition-all hover:scale-110 border border-orange-200/50 icon-container icon-orange">
+                  <img src="/images/agriconnect/marketArtboard 1.svg" alt="Market" class="w-11 h-11 opacity-70">
+                </div>
+              </div>
+            </div>
+
+            <!-- Middle row - center icon (larger) -->
+            <div class="col-start-2 row-start-2 flex justify-center">
+              <div class="icon-float-slow" style="animation-delay: 0.2s;">
+                <div class="w-28 h-28 rounded-3xl bg-white/90 backdrop-blur-sm flex items-center justify-center shadow-xl hover:shadow-2xl transition-all hover:scale-110 border-2 border-teal-300/60 icon-container icon-teal">
+                  <img src="/images/agriconnect/userArtboard 1.svg" alt="User" class="w-16 h-16 opacity-75">
+                </div>
+              </div>
+            </div>
+
+            <!-- Bottom row - 2 icons -->
+            <div class="col-start-1 row-start-3 flex justify-end">
+              <div class="icon-float" style="animation-delay: 0.8s;">
+                <div class="w-20 h-20 rounded-2xl bg-white/80 backdrop-blur-sm flex items-center justify-center shadow-lg hover:shadow-xl transition-all hover:scale-110 border border-purple-200/50 icon-container icon-purple">
+                  <img src="/images/agriconnect/cmsArtboard 1.svg" alt="CMS" class="w-11 h-11 opacity-70">
+                </div>
+              </div>
+            </div>
+            <div class="col-start-3 row-start-3 flex justify-start">
+              <div class="icon-float" style="animation-delay: 0.3s;">
+                <div class="w-20 h-20 rounded-2xl bg-white/80 backdrop-blur-sm flex items-center justify-center shadow-lg hover:shadow-xl transition-all hover:scale-110 border border-green-200/50 icon-container icon-green">
+                  <img src="/images/agriconnect/dashboardArtboard 1.svg" alt="Dashboard" class="w-11 h-11 opacity-70">
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -112,23 +69,73 @@
 </section>
 
 <style>
-  @keyframes rotate {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+  @keyframes icon-float {
+    0%, 100% {
+      transform: translateY(0px) translateX(0px);
+    }
+    25% {
+      transform: translateY(-15px) translateX(5px);
+    }
+    50% {
+      transform: translateY(-8px) translateX(-3px);
+    }
+    75% {
+      transform: translateY(-12px) translateX(3px);
+    }
   }
-  .rotate-group {
-    animation: rotate 40s linear infinite;
-    transform-origin: center;
+
+  @keyframes icon-float-slow {
+    0%, 100% {
+      transform: translateY(0px) scale(1);
+    }
+    50% {
+      transform: translateY(-10px) scale(1.05);
+    }
   }
-  @keyframes counter-rotate {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(-360deg); }
+
+  .icon-float {
+    animation: icon-float 4s ease-in-out infinite;
   }
-  .counter-rotate {
-    animation: counter-rotate 40s linear infinite;
+
+  .icon-float-slow {
+    animation: icon-float-slow 5s ease-in-out infinite;
   }
-  @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
+
+  /* Subtle color tints for icon containers */
+  .icon-container {
+    position: relative;
+  }
+
+  .icon-container::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .icon-blue::before {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(147, 197, 253, 0.05));
+  }
+
+  .icon-orange::before {
+    background: linear-gradient(135deg, rgba(251, 146, 60, 0.1), rgba(254, 215, 170, 0.05));
+  }
+
+  .icon-teal::before {
+    background: linear-gradient(135deg, rgba(20, 184, 166, 0.15), rgba(153, 246, 228, 0.08));
+  }
+
+  .icon-purple::before {
+    background: linear-gradient(135deg, rgba(168, 85, 247, 0.1), rgba(216, 180, 254, 0.05));
+  }
+
+  .icon-green::before {
+    background: linear-gradient(135deg, rgba(34, 197, 94, 0.1), rgba(187, 247, 208, 0.05));
+  }
+
+  .icon-container:hover::before {
+    opacity: 1;
   }
 </style>
