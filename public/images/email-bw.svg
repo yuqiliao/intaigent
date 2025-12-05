@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <!-- Placeholder: Email/Envelope Icon - Replace with proper design -->
+  <rect x="80" y="120" width="352" height="272" rx="20" stroke="currentColor" stroke-width="20" fill="none"/>
+  <path d="M80 120 L256 240 L432 120" stroke="currentColor" stroke-width="20" fill="none" stroke-linejoin="round"/>
+  <line x1="120" y1="200" x2="392" y2="200" stroke="currentColor" stroke-width="15" stroke-dasharray="10,10"/>
+  <line x1="120" y1="250" x2="392" y2="250" stroke="currentColor" stroke-width="15" stroke-dasharray="10,10"/>
+</svg>

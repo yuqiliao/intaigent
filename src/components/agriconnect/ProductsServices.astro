@@ -5,11 +5,14 @@
     </div>
     <div class="container mx-auto px-4 relative z-10">
         <div class="flex justify-center items-center mb-6">
-            <img
-              src="/images/agriconnect/marketArtboard 1.svg"
-              alt="Dashboard Icon"
-              class="w-12 h-12 mr-4"
-            />
+            <div class="w-14 h-14 rounded-full bg-[#FF9800] bg-opacity-10 flex items-center justify-center mr-4">
+              <img
+                src="/images/agriconnect/marketArtboard 1.svg"
+                alt="Market Icon"
+                class="w-10 h-10"
+                style="filter: brightness(0) saturate(100%);"
+              />
+            </div>
             <h2 class="text-4xl font-bold text-black">Connecting Knowledge to Action</h2>
         </div>
         
@@ -17,7 +20,7 @@
           <div class="w-full md:w-1/2 relative">
             <div class="max-w-sm mx-auto rounded-3xl overflow-hidden shadow-[0_10px_20px_rgba(0,0,0,0.2)] transition-shadow duration-300 hover:shadow-[0_20px_30px_rgba(0,0,0,0.3)]">
               <img 
-                src="/images/agriconnect/chatbot2.gif" 
+                src="/images/agriconnect/chatbot2-nologo.gif" 
                 alt="Chatbot Demo 2" 
                 class="w-full h-auto"
                 style="clip-path: inset(1px round 24px);"
@@ -26,17 +29,19 @@
           </div>
           <div class="w-full md:w-1/2 space-y-8">
               <p class="max-w-3xl mx-auto text-xl text-gray-600 mb-6">
-                  Agriconnect goes beyond information sharing – it's a gateway to connecting farmers with essential products and services. Our platform guides users towards relevant offerings, creating a seamless journey from education to action and fostering agricultural growth.
+                  Our AI coach goes beyond information sharing – it's a gateway to connecting learners with relevant products and services. The platform intelligently guides users towards offerings that complement their learning journey, creating a seamless path from knowledge acquisition to practical application and real-world impact.
               </p>
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 relative z-20">
                 {[
-                  { icon: "🧞‍♂️", title: "Tailored Solutions", description: "Customize offerings to match user profiles and needs" },
-                  { icon: "📂", title: "Seamless Integration", description: "Effortlessly showcase products within the platform" },
-                  { icon: "🧭", title: "User Journey Optimization", description: "Guide users from information to action effectively" },
-                  { icon: "🚀", title: "Increased Adoption", description: "Boost the uptake of agricultural solutions" },
+                  { icon: "/images/icons/lightbulb-icon.svg", bgClass: "bg-[#9C27B0]", title: "Tailored Solutions", description: "Customize offerings to match learner profiles and learning goals" },
+                  { icon: "/images/icons/folder-icon.svg", bgClass: "bg-[#31aae2]", title: "Seamless Integration", description: "Effortlessly showcase products and services within the coaching platform" },
+                  { icon: "/images/icons/compass-icon.svg", bgClass: "bg-[#009688]", title: "Learning Journey Optimization", description: "Guide learners from knowledge to action effectively" },
+                  { icon: "/images/icons/rocket-icon.svg", bgClass: "bg-[#FF9800]", title: "Increased Engagement", description: "Boost learner engagement and solution adoption" },
                 ].map((feature) => (
                   <div class="bg-white p-6 rounded-lg shadow-md transition-all hover:shadow-lg relative z-30">
-                    <div class="text-3xl mb-2">{feature.icon}</div>
+                    <div class={`w-14 h-14 rounded-full ${feature.bgClass} bg-opacity-10 flex items-center justify-center mb-4`}>
+                      <img src={feature.icon} alt={feature.title} class="w-8 h-8" style="filter: brightness(0) saturate(100%);" />
+                    </div>
                     <h4 class="text-lg font-semibold mb-2 text-gray-800">{feature.title}</h4>
                     <p class="text-gray-600">{feature.description}</p>
                   </div>

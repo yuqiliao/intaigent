@@ -1,57 +1,102 @@
-<section class="py-16 relative">
+<section class="py-16 relative" id="chatbot">
   <div aria-hidden="true" class="absolute inset-0 grid grid-cols-2 -space-x-52 opacity-40">
     <div class="blur-[106px] h-56 bg-gradient-to-br from-blue-400 via-purple-200 to-green-400"></div>
     <div class="blur-[106px] h-32 bg-gradient-to-r from-white via-green-400 to-blue-400"></div>
   </div>
   <div class="container mx-auto px-4 relative z-10">
     <div class="flex items-center justify-center mb-12">
-      <img src="/images/agriconnect/chatbotArtboard 1.svg" alt="Chatbot Icon" class="w-12 h-12 mr-4">
+      <div class="w-14 h-14 rounded-full bg-[#31aae2] bg-opacity-10 flex items-center justify-center mr-4">
+        <img src="/images/agriconnect/chatbotArtboard 1.svg" alt="Chatbot Icon" class="w-10 h-10" style="filter: brightness(0) saturate(100%);">
+      </div>
       <h2 class="text-4xl font-bold text-center text-gray-800">AI Coaches That Speak, Listen, and Show</h2>
     </div>
     
-    <div class="flex flex-col md:flex-row justify-between gap-32">
+    <div class="flex flex-col md:flex-row justify-between items-center gap-8 lg:gap-12">
       {/* Left side - Stacked GIFs */}
-      <div class="w-[70%] sm:w-[45%] lg:w-[30%]">
-        <div class="relative max-w-sm mx-auto">
-          {/* Instruction */}
-          <div class="instruction-hint absolute left-1/2 -top-12 -translate-x-1/2 text-center z-30">
-            <span class="inline-block bg-white/90 px-4 py-2 rounded-full shadow-md text-gray-600 font-medium text-sm whitespace-nowrap">
-              Click cards to switch language
-            </span>
-          </div>
-
+      <div class="w-full md:w-[48%] lg:w-[45%]">
+        <div class="relative max-w-md mx-auto md:mr-auto md:ml-0">
           {/* Cards container */}
-          <div class="relative w-full aspect-[3/4]">
+          <div class="relative w-full aspect-[3/4] group">
+            {/* Instruction - shown on hover */}
+            <div class="instruction-hint absolute left-1/2 -top-12 -translate-x-1/2 text-center z-30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+              <span class="inline-block bg-white/90 px-4 py-2 rounded-full shadow-md text-gray-600 font-medium text-sm whitespace-nowrap">
+                Click cards to switch language
+              </span>
+            </div>
             {/* English Card */}
             <div id="english-card" 
                  class="absolute inset-0 transition-all duration-500 cursor-pointer"
                  style="transform: translateX(0); z-index: 10;">
-              <div class="rounded-3xl overflow-hidden shadow-[0_10px_20px_rgba(0,0,0,0.2)] transition-shadow duration-300 hover:shadow-[0_20px_30px_rgba(0,0,0,0.3)]">
-                <img 
-                  src="/images/agriconnect/chatbot1.gif" 
-                  alt="Chatbot Demo in English" 
-                  class="w-full h-auto"
-                  style="clip-path: inset(1px round 24px);"
-                >
-                <div class="absolute top-0 left-0 bg-white/90 px-3 py-1.5 rounded-full text-sm font-medium">
-                  English
+              <div class="relative w-full h-full mx-auto phone-container">
+                {/* Phone container with modern white border */}
+                <div class="w-full h-full bg-gradient-to-br from-white via-gray-50 to-gray-100 rounded-[32px] p-1 shadow-[0_20px_40px_rgba(0,0,0,0.08),0_8px_16px_rgba(0,0,0,0.04),inset_0_1px_0_rgba(255,255,255,0.8)] transition-shadow duration-300 hover:shadow-[0_25px_50px_rgba(0,0,0,0.12),0_10px_20px_rgba(0,0,0,0.06),inset_0_1px_0_rgba(255,255,255,0.8)]">
+                  {/* Screen area */}
+                  <div class="relative w-full h-full rounded-[28px] overflow-hidden shadow-inner bg-white">
+                    {/* Notch */}
+                    <div class="absolute top-2 left-1/2 transform -translate-x-1/2 w-20 h-3 bg-gray-800 rounded-full z-20"></div>
+                    
+                    {/* Video */}
+                    <video 
+                      src="/images/agriconnect/Demo_English.mp4" 
+                      class="w-full h-full object-cover phone-video english-video"
+                      style="object-position: center; filter: brightness(1.05) contrast(1.15); object-fit: cover;"
+                      autoplay
+                      loop
+                      muted
+                      playsinline
+                      aria-label="Chatbot Demo in English"
+                    ></video>
+                    
+                    {/* White overlay to hide header text, logo, and any lines - extends slightly to cover edges */}
+                    <div class="absolute top-0 left-0 right-0 h-[15%] bg-white z-10" style="z-index: 15; border-radius: 28px 28px 0 0;"></div>
+                    {/* Additional overlay to cover any side lines */}
+                    <div class="absolute top-0 left-0 w-[2%] h-[15%] bg-white z-10" style="z-index: 16;"></div>
+                    <div class="absolute top-0 right-0 w-[2%] h-[15%] bg-white z-10" style="z-index: 16;"></div>
+                    
+                    {/* Language label - moved to top right */}
+                    <div class="absolute top-4 right-4 bg-white/90 px-3 py-1.5 rounded-full text-sm font-medium z-20 shadow-sm">
+                      English
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
 
-            {/* Hindi Card */}
+            {/* Bengali Card */}
             <div id="hindi-card"
                  class="absolute inset-0 transition-all duration-500 cursor-pointer"
-                 style="transform: translateX(40%) scale(0.98); z-index: 5;">
-              <div class="rounded-3xl overflow-hidden shadow-[0_10px_20px_rgba(0,0,0,0.2)] transition-shadow duration-300 hover:shadow-[0_20px_30px_rgba(0,0,0,0.3)]">
-                <img 
-                  src="/images/agriconnect/chatbot1-hindi.gif" 
-                  alt="Chatbot Demo in Hindi" 
-                  class="w-full h-auto"
-                  style="clip-path: inset(1px round 24px);"
-                >
-                <div class="absolute top-0 left-0 bg-white/90 px-3 py-1.5 rounded-full text-sm font-medium">
-                  हिंदी
+                 style="transform: translateX(35%) scale(0.98); z-index: 5;">
+              <div class="relative w-full h-full mx-auto phone-container">
+                {/* Phone container with modern white border */}
+                <div class="w-full h-full bg-gradient-to-br from-white via-gray-50 to-gray-100 rounded-[32px] p-1 shadow-[0_20px_40px_rgba(0,0,0,0.08),0_8px_16px_rgba(0,0,0,0.04),inset_0_1px_0_rgba(255,255,255,0.8)] transition-shadow duration-300 hover:shadow-[0_25px_50px_rgba(0,0,0,0.12),0_10px_20px_rgba(0,0,0,0.06),inset_0_1px_0_rgba(255,255,255,0.8)]">
+                  {/* Screen area */}
+                  <div class="relative w-full h-full rounded-[28px] overflow-hidden shadow-inner bg-white">
+                    {/* Notch */}
+                    <div class="absolute top-2 left-1/2 transform -translate-x-1/2 w-20 h-3 bg-gray-800 rounded-full z-20"></div>
+                    
+                    {/* Video */}
+                    <video 
+                      src="/images/agriconnect/Demo_Bengali.mp4" 
+                      class="w-full h-full object-cover phone-video bengali-video"
+                      style="object-position: center; filter: brightness(1.05) contrast(1.15); object-fit: cover;"
+                      autoplay
+                      loop
+                      muted
+                      playsinline
+                      aria-label="Chatbot Demo in Bengali"
+                    ></video>
+                    
+                    {/* White overlay to hide header text, red shape, and any lines - extends slightly to cover edges */}
+                    <div class="absolute top-0 left-0 right-0 h-[15%] bg-white z-10" style="z-index: 15; border-radius: 28px 28px 0 0;"></div>
+                    {/* Additional overlay to cover any side lines */}
+                    <div class="absolute top-0 left-0 w-[2%] h-[15%] bg-white z-10" style="z-index: 16;"></div>
+                    <div class="absolute top-0 right-0 w-[2%] h-[15%] bg-white z-10" style="z-index: 16;"></div>
+                    
+                    {/* Language label - moved to top right */}
+                    <div class="absolute top-4 right-4 bg-white/90 px-3 py-1.5 rounded-full text-sm font-medium z-20 shadow-sm">
+                      Bengali
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -60,26 +105,34 @@
       </div>
 
       {/* Right side - Key Features */}
-      <div class="w-full md:w-1/2 mt-32 sm:mt-16">
+      <div class="w-full md:w-[52%] lg:w-[55%] mt-12 md:mt-0">
         <h2 class="text-2xl font-bold mb-8">Key Features</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
           <div class="bg-white p-6 rounded-xl shadow-md">
-            <div class="text-4xl mb-4">🌍</div>
+            <div class="w-14 h-14 rounded-full bg-[#009688] bg-opacity-10 flex items-center justify-center mb-4">
+              <img src="/images/icons/globe-icon.svg" alt="Multi-lingual" class="w-8 h-8" style="filter: brightness(0) saturate(100%);">
+            </div>
             <h3 class="font-semibold text-lg mb-2">Multi-lingual</h3>
             <p class="text-gray-600">Support in various languages</p>
           </div>
           <div class="bg-white p-6 rounded-xl shadow-md">
-            <div class="text-4xl mb-4">🎙️</div>
+            <div class="w-14 h-14 rounded-full bg-[#9C27B0] bg-opacity-10 flex items-center justify-center mb-4">
+              <img src="/images/icons/microphone-icon.svg" alt="Multi-modal" class="w-8 h-8" style="filter: brightness(0) saturate(100%);">
+            </div>
             <h3 class="font-semibold text-lg mb-2">Multi-modal</h3>
             <p class="text-gray-600">Text, voice, and image interactions</p>
           </div>
           <div class="bg-white p-6 rounded-xl shadow-md">
-            <div class="text-4xl mb-4">💬</div>
+            <div class="w-14 h-14 rounded-full bg-[#31aae2] bg-opacity-10 flex items-center justify-center mb-4">
+              <img src="/images/icons/chat-icon.svg" alt="Multi-platform" class="w-8 h-8" style="filter: brightness(0) saturate(100%);">
+            </div>
             <h3 class="font-semibold text-lg mb-2">Multi-platform</h3>
             <p class="text-gray-600">Works with WhatsApp, Telegram, WeChat, Line, and iMessage</p>
           </div>
           <div class="bg-white p-6 rounded-xl shadow-md">
-            <div class="text-4xl mb-4">⏰</div>
+            <div class="w-14 h-14 rounded-full bg-[#FF9800] bg-opacity-10 flex items-center justify-center mb-4">
+              <img src="/images/icons/clock-icon.svg" alt="Always Available" class="w-8 h-8" style="filter: brightness(0) saturate(100%);">
+            </div>
             <h3 class="font-semibold text-lg mb-2">Always Available</h3>
             <p class="text-gray-600">24/7 support for farmers</p>
           </div>
@@ -98,39 +151,70 @@
     0%, 100% { transform: translateX(-50%) translateY(0); }
     50% { transform: translateX(-50%) translateY(-8px); }
   }
+
+  .instruction-hint {
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .phone-container {
+    max-width: 280px;
+  }
+
+  @media (min-width: 768px) {
+    .phone-container {
+      max-width: 300px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .phone-container {
+      max-width: 320px;
+    }
+  }
+
+  .phone-video {
+    display: block;
+    border-radius: 28px;
+  }
+
+  .english-video {
+    border-radius: 28px;
+    transform: scale(1.01);
+    margin: 0;
+  }
+
+  .bengali-video {
+    border-radius: 28px;
+    transform: scale(1.01);
+    margin: 0;
+  }
 </style>
 
 <script is:inline>
-  let isHindiOnTop = false;
+  let isBengaliOnTop = false;
   
   const englishCard = document.getElementById('english-card');
-  const hindiCard = document.getElementById('hindi-card');
+  const bengaliCard = document.getElementById('hindi-card');
   const instructionHint = document.querySelector('.instruction-hint');
   
   function toggleCards() {
-    if (!isHindiOnTop) {
-      // Bring Hindi to front
-      hindiCard.style.transform = 'translateX(0)';
-      hindiCard.style.zIndex = '10';
-      englishCard.style.transform = 'translateX(40%) scale(0.98)';
+    if (!isBengaliOnTop) {
+      // Bring Bengali to front
+      bengaliCard.style.transform = 'translateX(0)';
+      bengaliCard.style.zIndex = '10';
+      englishCard.style.transform = 'translateX(35%) scale(0.98)';
       englishCard.style.zIndex = '5';
     } else {
       // Bring English to front
       englishCard.style.transform = 'translateX(0)';
       englishCard.style.zIndex = '10';
-      hindiCard.style.transform = 'translateX(40%) scale(0.98)';
-      hindiCard.style.zIndex = '5';
+      bengaliCard.style.transform = 'translateX(40%) scale(0.98)';
+      bengaliCard.style.zIndex = '5';
     }
     
-    isHindiOnTop = !isHindiOnTop;
-    
-    // Hide instruction after first click
-    instructionHint.style.opacity = '0';
-    setTimeout(() => {
-      instructionHint.style.display = 'none';
-    }, 500);
+    isBengaliOnTop = !isBengaliOnTop;
   }
   
   englishCard.addEventListener('click', toggleCards);
-  hindiCard.addEventListener('click', toggleCards);
+  bengaliCard.addEventListener('click', toggleCards);
 </script>

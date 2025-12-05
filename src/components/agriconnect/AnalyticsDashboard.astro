@@ -5,27 +5,30 @@
   </div>
   <div class="container mx-auto px-4 relative z-10">
     <div class="flex items-center mb-6">
-      <img
-        src="/images/agriconnect/dashboardArtboard 1.svg"
-        alt="Dashboard Icon"
-        class="w-12 h-12 mr-4"
-      />
+      <div class="w-14 h-14 rounded-full bg-[#4CAF50] bg-opacity-10 flex items-center justify-center mr-4">
+        <img
+          src="/images/agriconnect/dashboardArtboard 1.svg"
+          alt="Dashboard Icon"
+          class="w-10 h-10"
+          style="filter: brightness(0) saturate(100%);"
+        />
+      </div>
       <h2 class="text-4xl font-bold text-black">Impact Analytics Dashboard</h2>
     </div>
     <div class="flex flex-col md:flex-row items-center gap-8">
       <div class="md:w-1/2">
-        <p class="text-xl mb-6 text-gray-600">Get real-time insights into farmer interactions and needs:</p>
+        <p class="text-xl mb-6 text-gray-600">Get real-time insights into learner interactions and needs:</p>
         <div class="grid grid-cols-1 gap-8">
           {/* First row with two boxes */}
           <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
             {[
               { 
-                title: "See what farmers are asking and learning", 
-                description: "Understand what farmers need most and when they need it, from popular topics to regional trends."
+                title: "See what learners are asking and learning", 
+                description: "Understand what learners need most and when they need it, from popular topics to regional trends."
               },
               { 
                 title: "Track real behavior change", 
-                description: "Measure how farmers adopt new practices and see the impact on their yields and success."
+                description: "Measure how learners adopt new practices and see the impact on their yields and success."
               }
             ].map((feature) => (
               <div class="bg-white p-8 rounded-lg shadow-md transition-all hover:shadow-lg hover:scale-[1.02]">
